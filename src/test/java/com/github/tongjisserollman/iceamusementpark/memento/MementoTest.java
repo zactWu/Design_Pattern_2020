@@ -1,11 +1,13 @@
 package com.github.tongjisserollman.iceamusementpark.memento;
 
+import com.github.tongjisserollman.iceamusementpark.entertainment.dart.memento.RecordList;
+import com.github.tongjisserollman.iceamusementpark.entertainment.dart.memento.ScoreOriginator;
 import org.junit.jupiter.api.Test;
 
 public class MementoTest {
 
     @Test
-    void snackShopFactoryTest() {
+    void testMemento() {
         ScoreOriginator scoreOriginator = new ScoreOriginator();
         RecordList dartsRecordList = new RecordList();
         scoreOriginator.setRecord(80,"飞镖入门者");

@@ -1,10 +1,16 @@
 package com.github.tongjisserollman.iceamusementpark.converter;
 
+import com.github.tongjisserollman.iceamusementpark.office.employeecard.converter.Converter;
+import com.github.tongjisserollman.iceamusementpark.office.employeecard.converter.Employee;
+import com.github.tongjisserollman.iceamusementpark.office.employeecard.converter.EmployeeIdCard;
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ConverterTest {
-    @org.junit.jupiter.api.Test
-    void converterTest(){
+
+    @Test
+    void testConverter(){
         Employee person = new Employee(
                 "Kowalski",
                 "114514",

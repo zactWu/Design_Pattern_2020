@@ -2,8 +2,6 @@
 
 同济大学软件学院 2020-2021 学年 第 1 学期设计模式课程小组项目
 
-[English Version](https://github.com/TongjiSSERollMan/Design_Pattern_2020/blob/master/README-eng.md)
-
 ## 项目依赖
 
 Gradle 
@@ -16,17 +14,12 @@ Gradle
 
 ### 代码风格
 
-~~[阿里巴巴 Java 编写指南](https://github.com/alibaba/Alibaba-Java-Coding-Guidelines.git)~~
-
 文件命名方式参见下文项目结构。
 
 ### 用例类
 
-~~所有游乐设施请继承 `FacilityTemplate` 类。~~
 
-游乐设施无需继承 `FacilityTemplate` 类。
-
-在类方法中记得加入 `CallStackLogger`，格式如下：
+使用 `CallStackLogger`打印输出，格式如下：
 
 ```Java
 CallStackLogger.log(
@@ -78,6 +71,18 @@ Win10 自带的命令行工具 `cmd` 和 `Powershell` 默认使用 GBK 编码，
 > Set-ItemProperty 'HKCU:\Software\Microsoft\Command Processor' AutoRun ''
 ```
 
+如果提示找不到此注册表键值，请用管理员模式运行 `Powershell`（可以同时按下 Win+S，搜索 `Powershell`，选择以管理员身份运行）。然后在 `Powershell` 中输入下列命令：
+
+```
+> Set-ItemProperty 'HKLM:\Software\Microsoft\Command Processor' AutoRun 'chcp 65001 >NUL'
+```
+
+要回滚前述操作，可以在 `Powershell` 中输入下列命令：
+
+```
+> Set-ItemProperty 'HKLM:\Software\Microsoft\Command Processor' AutoRun ''
+```
+
 ### 运行全部测试
 
 ```
@@ -91,6 +96,8 @@ $ ./gradlew test --tests com.github.tongjisserollman.iceamusementpark.patternnam
 ```
 
 ### 运行 Main 方法
+
+main方法会打印一个简单的UI，用于选择特定测试执行
 
 ```
 $ ./gradlew run
@@ -106,12 +113,13 @@ Design_Pattern_2020
    ├─ main
    │ └─ java
    │     └─ com/github/tongjisserollman/iceamusementpark   // 项目父包  （全小写）  
-   │        ├─ builder                                     // 设计模式包 （全小写）
-   │        │  ├─ Smoothie.java                            // 用例类  （大驼峰）
-   │        │  └─ SmoothieBuilder.java                     // 用例类  （大驼峰）
-   │        ├─ Main.java                                   // 主类
-   │        └─ util                                        // 工具包
-   │           └─ Utils.java                               // 工具类，包含了 CallStackLogger 
+   |        ├─ smoothie                                    // 功能包    （全小写）
+   │           ├─ builder                                  // 设计模式包（全小写）
+   │           │  ├─ Smoothie.java                         // 用例类    （大驼峰）
+   │           │  └─ SmoothieBuilder.java                  // 用例类    （大驼峰）
+   │           ├─ Main.java                                // 主类
+   │           └─ util                                     // 工具包
+   │              └─ Utils.java                            // 工具类，包含了 CallStackLogger 
    └─ test                                                 //
       └─ java                                              //
          └─ com/github/tongjisserollman/iceamusementpark   //

@@ -1,11 +1,13 @@
 package com.github.tongjisserollman.iceamusementpark.factory;
 
+import com.github.tongjisserollman.iceamusementpark.shoppingmall.snack.factory.Snack;
+import com.github.tongjisserollman.iceamusementpark.shoppingmall.snack.factory.SnackShop;
 import org.junit.jupiter.api.Test;
 
 public class FactoryTest {
 
     @Test
-    void snackShopFactoryTest() {
+    void testFactory() {
         SnackShop snackShop = new SnackShop();
 
         Snack burger = snackShop.orderSnack("Burger");

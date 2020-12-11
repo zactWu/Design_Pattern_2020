@@ -1,12 +1,14 @@
 package com.github.tongjisserollman.iceamusementpark.multipleton;
 
-
+import com.github.tongjisserollman.iceamusementpark.base.parkzones.multipleton.ParkZones;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MultipletonTest {
-    @org.junit.jupiter.api.Test
-    void zonesTest() {
-        String[] zonesName = {"movieZone", "amusementZone", "restaurantZone", "hotelZone"};
+
+    @Test
+    void testMultipleton() {
+        String[] zonesName = {"entertainmentZone", "stageZone", "shoppingMallZone", "officeZone"};
         for (int i = 0; i < zonesName.length; i++){
             ParkZones zone1 = ParkZones.getInstance(zonesName[i]);
             ParkZones zone2 = ParkZones.getInstance(zonesName[i]);
@@ -17,5 +19,10 @@ public class MultipletonTest {
                 assertNotSame(zone3, zone4);
             }
         }
+        String out1 = ParkZones.getInstance("entertainmentZone").toString();
+        String out2 = ParkZones.getInstance("stageZone").toString();
+        String out3 = ParkZones.getInstance("shoppingMallZone").toString();
+        String out4 = ParkZones.getInstance("officeZone").toString();
+        System.out.println("游乐园的分区包括：" + out1 + " " + out2 + " " + out3 + " " + out4);
     }
 }

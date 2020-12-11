@@ -1,11 +1,16 @@
 package com.github.tongjisserollman.iceamusementpark.observer;
 
+import com.github.tongjisserollman.iceamusementpark.office.monitor.observer.Office;
+import com.github.tongjisserollman.iceamusementpark.office.monitor.observer.ParkScreen;
+import com.github.tongjisserollman.iceamusementpark.office.monitor.observer.Turnstile;
+import com.github.tongjisserollman.iceamusementpark.office.monitor.observer.VisitorsSystem;
 import org.junit.jupiter.api.Test;
 
 
 public class ObserverTest {
+
     @Test
-    void observersTest() {
+    void testObserver() {
         Turnstile turnstile1 = new Turnstile();
         Turnstile turnstile2 = new Turnstile();
 
